@@ -1,2 +1,4 @@
-package java.com.revature.storeApp.ui;public class HistoryMenu {
+package com.revature.storeApp.ui;
+
+public class HistoryMenu {
 }

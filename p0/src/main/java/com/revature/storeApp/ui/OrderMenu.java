@@ -1,2 +1,4 @@
-package java.com.revature.storeApp.ui;public class OrderMenu {
+package com.revature.storeApp.ui;
+
+public class OrderMenu {
 }

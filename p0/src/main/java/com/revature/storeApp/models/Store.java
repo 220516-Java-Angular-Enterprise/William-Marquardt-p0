@@ -1,2 +1,4 @@
-package java.com.revature.storeApp.models;public class Store {
+package com.revature.storeApp.models;
+
+public class Store {
 }
