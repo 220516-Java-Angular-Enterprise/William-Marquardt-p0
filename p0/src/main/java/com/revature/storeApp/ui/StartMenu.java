@@ -77,6 +77,7 @@ public class StartMenu implements IMenu {
         while (true) {
             System.out.println("[2]: Creating a new account...");
             //Prompt for a new username
+            
             //If username is valid, prompt for password
             //If password is valid, ask to confirm
             //If account is created, return to start menu.
