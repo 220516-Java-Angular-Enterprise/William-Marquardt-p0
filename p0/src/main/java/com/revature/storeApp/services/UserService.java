@@ -1,8 +1,10 @@
 package com.revature.storeApp.services;
 import com.revature.storeApp.daos.UserDAO;
 import com.revature.storeApp.models.User;
+import com.revature.storeApp.util.custom_exceptions.InvalidSQLException;
 import com.revature.storeApp.util.custom_exceptions.InvalidUserInputException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /* Used to check user data (password, username, etc.) and access DAOs */
@@ -66,5 +68,34 @@ public class UserService {
     public void register(User user){
     //use UserDAO to add user to the database
         userDAO.save(user);
+    }
+
+    public boolean updateName (String name, String id){
+        try {
+            userDAO.updateName(name, id);
+            return true;
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    public boolean deleteUser(User user){
+        try{
+            userDAO.delete(user.getId());
+            return true;
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    public List<User> getAll() {
+        List<User> outList = new ArrayList<>();
+        try {
+            outList = userDAO.getAll();
+
+        }   catch (InvalidSQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return outList;
     }
 }
